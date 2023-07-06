@@ -12,11 +12,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Set docker image names.
-      - name: Setup env variables
-        run: |
-          echo "DOCKER_SERVICE=kvalitetsit/busykit" >> $GITHUB_ENV
-
       # Checkout source code
       - uses: actions/checkout@v2
 
@@ -27,8 +22,16 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USER }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
-      - name: Build
-        run: ./build/build.sh ${{ env.DOCKER_SERVICE }}:latest
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm/v7
+          push: true
+          tags: kvalitetsit/busykit:latest
 
-      - name: Push latest service docker image
-        run: ./build/docker-push.sh ${{ env.DOCKER_SERVICE }}:latest
+#      - name: Build
+#        run: ./build/build.sh ${{ env.DOCKER_SERVICE }}:latest
+#
+#      - name: Push latest service docker image
+#        run: ./build/docker-push.sh ${{ env.DOCKER_SERVICE }}:latest
