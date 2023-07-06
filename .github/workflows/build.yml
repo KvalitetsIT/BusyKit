@@ -35,9 +35,3 @@ jobs:
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           push: true
           tags: kvalitetsit/busykit:latest
-
-#      - name: Build
-#        run: ./build/build.sh ${{ env.DOCKER_SERVICE }}:latest
-#
-#      - name: Push latest service docker image
-#        run: ./build/docker-push.sh ${{ env.DOCKER_SERVICE }}:latest
