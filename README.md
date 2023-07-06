@@ -1,5 +1,5 @@
 # BusyKit
-A Debian image with alle the tools you need to debug and scripts.  
+A Debian image with all the tools you need to debug and scripts.  
 New build every night.
 
 ## Packages 
