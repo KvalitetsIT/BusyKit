@@ -10,3 +10,4 @@ New build every night.
 - nano
 - less
 - vim
+- iputils-ping
