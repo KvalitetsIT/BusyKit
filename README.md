@@ -8,3 +8,5 @@ New build every night.
 - telnet 
 - dnsutils (nslookup, dig)
 - nano
+- less
+- vim
