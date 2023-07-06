@@ -1,0 +1,32 @@
+name: CICD
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 03 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Set docker image names.
+      - name: Setup env variables
+        run: |
+          echo "DOCKER_SERVICE=kvalitetsit/busykit" >> $GITHUB_ENV
+
+      # Checkout source code
+      - uses: actions/checkout@v2
+
+      # Login to docker hub using secrets in GitHub.
+      - name: Login to docker
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USER }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+
+      - name: Build
+        run: ./build/build.sh ${{ env.DOCKER_SERVICE }}:latest
+
+      - name: Push latest service docker image
+        run: ./build/docker-push.sh ${{ env.DOCKER_SERVICE }}:latest
