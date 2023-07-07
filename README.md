@@ -13,3 +13,4 @@ Docker Hub: https://hub.docker.com/r/kvalitetsit/busykit
 - less
 - vim
 - iputils-ping
+- jq
