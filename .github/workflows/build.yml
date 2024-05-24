@@ -34,4 +34,4 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           push: true
-          tags: kvalitetsit/busykit:latest
+          tags: kvalitetsit/busykit:latest,kvalitetsit/busykit:${{ github.sha }}
