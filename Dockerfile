@@ -5,5 +5,5 @@ RUN apt update && apt upgrade -y && \
     rm -rf /var/lib/apt/lists/*
 
 RUN useradd --user-group --system --create-home --no-log-init --uid 1001 kit
-USER kit
+USER 1001
 WORKDIR /home/kit
