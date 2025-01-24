@@ -15,3 +15,4 @@ Docker Hub: https://hub.docker.com/r/kvalitetsit/busykit
 - iputils-ping
 - jq
 - rsync
+- git
