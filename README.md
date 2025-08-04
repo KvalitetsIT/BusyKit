@@ -17,3 +17,4 @@ Docker Hub: https://hub.docker.com/r/kvalitetsit/busykit
 - rsync
 - git
 - unzip
+- uchardet
