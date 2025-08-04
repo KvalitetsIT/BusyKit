@@ -16,3 +16,4 @@ Docker Hub: https://hub.docker.com/r/kvalitetsit/busykit
 - jq
 - rsync
 - git
+- unzip
