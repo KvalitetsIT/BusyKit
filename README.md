@@ -18,3 +18,4 @@ Docker Hub: https://hub.docker.com/r/kvalitetsit/busykit
 - git
 - unzip
 - uchardet
+- netcat-openbsd
